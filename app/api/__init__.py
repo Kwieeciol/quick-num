@@ -10,7 +10,7 @@ log = logging.getLogger(__name__)
 __all__ = ('create_app',)
 
 
-async def create_app() -> web.Application:
+async def create_app(main_app: web.Application) -> web.Application:
     app = web.Application()
     pattern = re.compile(r'v\d+')
     path = os.path.dirname(os.path.realpath(__file__))
@@ -19,8 +19,8 @@ async def create_app() -> web.Application:
         if not pattern.match(f):
             continue
         
+        route = f'/{f}'
         module = importlib.import_module(f'{__name__}.{f}')
-        route = f'/api/{f}'
         if not hasattr(module, 'create_app'):
             logging.error(
                 f'Could not add sub app {route!r} (no entry point found)'
