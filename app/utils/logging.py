@@ -71,7 +71,7 @@ def setup_logging():
         )
         handler.setFormatter(fmt)
         log.addHandler(handler)
-        
+
         console_handler = logging.StreamHandler()
         console_handler.setFormatter(ColorFormatter())
         log.addHandler(console_handler)

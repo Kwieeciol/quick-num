@@ -13,7 +13,7 @@ async def create_app() -> web.Application:
             sub_app = await factory(app)
         else:
             sub_app = factory(app)  # type: ignore
-        
+
         app.add_subapp(ext, sub_app)
-        
+
     return app
