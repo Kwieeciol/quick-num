@@ -65,7 +65,7 @@ jobs:
                 pip install pytest pytest-asyncio coverage
             - name: Run tests
               run: |
-                coverage run -m pytest -s -v tests
+                python -m coverage run -m pytest -s -v tests
 
     coverage:
         runs-on: ubuntu-latest
@@ -81,4 +81,4 @@ jobs:
                 python-version: ${{ matrix.python-version }}
             - name: Check coverage
               run: |
-                coverage report -m
+                python -m coverage report -m
