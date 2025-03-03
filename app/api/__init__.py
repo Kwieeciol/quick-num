@@ -21,7 +21,7 @@ async def create_app(main_app: web.Application) -> web.Application:
         
         route = f'/{f}'
         module = importlib.import_module(f'{__name__}.{f}')
-        if not hasattr(module, 'create_app'):
+        if not hasattr(module, 'create_app'):  # pragma: no cover
             logging.error(
                 f'Could not add sub app {route!r} (no entry point found)'
             )
