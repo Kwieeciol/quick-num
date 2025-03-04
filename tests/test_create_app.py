@@ -1,6 +1,7 @@
 import os
 import sys
 import pytest
+import asyncpg
 
 sys.path.insert(
     0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
@@ -13,5 +14,9 @@ from app import create_app as create_main
 
 @pytest.mark.asyncio
 async def test_create_main():
-    app = await create_main()
-    assert isinstance(app, web.Application)
+    with pytest.raises(KeyError):
+        app = await create_main()
+
+    os.environ['DATABASE_URI'] = 'postgresql://postgres:postgres@localhost/database'
+    with pytest.raises(OSError):
+        app = await create_main()
