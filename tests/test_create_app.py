@@ -18,6 +18,7 @@ async def test_create_main():
     try:
         config.DATABASE_URI = os.environ['DATABASE_URL']
     except KeyError:
-        pass
+        print("KEY ERROR DATABASE URL NOT FOUND")
     else:
+        print('DATABASE URI:', os.environ['DATABASE_URL'])
         app = await create_main()
