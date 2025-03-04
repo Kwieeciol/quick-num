@@ -3,21 +3,17 @@ repos:
     rev: v5.0.0
     hooks:
     -   id: check-yaml
-        name: Check YAML
     -   id: check-json
-        name: Check JSON
     -   id: check-toml
-        name: Check TOML
     -   id: trailing-whitespace
-        name: Remove trailing whitespace
     -   id: requirements-txt-fixer
-        name: Fix requirements.txt
     -   id: end-of-file-fixer
-        name: Newline fixer
     -   id: detect-private-key
-        name: Detect private keys
 -   repo: https://github.com/asottile/pyupgrade
     rev: v3.19.1
     hooks:
     -   id: pyupgrade
-        name: PyUpgrade
+-   repo: https://github.com/PyCQA/flake8
+    rev: 7.1.2
+    hooks:
+    -   id: flake8
