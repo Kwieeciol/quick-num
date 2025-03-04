@@ -13,7 +13,3 @@ repos:
     rev: v3.19.1
     hooks:
     -   id: pyupgrade
--   repo: https://github.com/PyCQA/flake8
-    rev: 7.1.2
-    hooks:
-    -   id: flake8

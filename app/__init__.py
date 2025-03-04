@@ -9,7 +9,6 @@ from .utils import get_env
 __all__ = ('create_app',)
 
 
-
 async def create_app() -> web.Application:
     app = web.Application()
     pool = await asyncpg.create_pool(get_env()['DATABASE_URI'])
