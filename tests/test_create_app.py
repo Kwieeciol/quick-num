@@ -7,16 +7,17 @@ sys.path.insert(
     0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 )
 
-
-from aiohttp import web
+from app import config
 from app import create_app as create_main
-
 
 @pytest.mark.asyncio
 async def test_create_main():
-    with pytest.raises(KeyError):
+    with pytest.raises(OSError):
         app = await create_main()
 
-    os.environ['DATABASE_URI'] = 'postgresql://postgres:postgres@localhost/database'
-    with pytest.raises(OSError):
+    try:
+        config.DATABASE_URI = os.environ['DATABASE_URL']
+    except KeyError:
+        pass
+    else:
         app = await create_main()

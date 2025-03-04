@@ -2,16 +2,15 @@ import inspect
 import asyncpg
 import aiohttp
 
-from . import api
 from aiohttp import web
-from .utils import get_env
+from . import api, config
 
 __all__ = ('create_app',)
 
 
 async def create_app() -> web.Application:
     app = web.Application()
-    pool = await asyncpg.create_pool(get_env()['DATABASE_URI'])
+    pool = await asyncpg.create_pool(config.DATABASE_URI)
     session = aiohttp.ClientSession()
 
     async def on_cleanup(_):
