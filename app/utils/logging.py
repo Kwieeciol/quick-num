@@ -10,7 +10,7 @@ __all__ = ('setup_logging',)
 
 class SupressFilter(logging.Filter):
     def filter(self, record):
-        return not (record.name == "aiohttp.access" and record.levelno == logging.INFO)
+        return not (record.name == 'aiohttp.access' and record.levelno == logging.INFO)
 
 
 class ColorFormatter(logging.Formatter):
