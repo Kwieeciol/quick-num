@@ -1,7 +1,6 @@
 import os
 import sys
 import pytest
-import asyncpg
 
 from aiohttp import web
 

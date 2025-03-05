@@ -1,5 +1,3 @@
-name: Test and lint
-
 on:
     push:
         branches: [ main ]
