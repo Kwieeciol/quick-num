@@ -11,11 +11,13 @@ ignore_missing_imports = true
 [tool.pytest.ini_options]
 asyncio_default_fixture_loop_scope = 'function'
 
-[tool.flake8]
-max-line-length = 88
-ignore = [
-    'W293','E128','E124','E741','W504','W503','E704','E701','F401','F403','E241'
-]
-exclude = [
-    '.venv', 'tests', 'migrate.py'
-]
+[tool.ruff]
+line-length = 88
+indent-width = 4
+target-version = 'py313'
+
+[tool.ruff.lint]
+ignore = ['F403']
+
+[tool.ruff.format]
+quote-style = "single"
