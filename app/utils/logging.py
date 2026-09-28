@@ -1,6 +1,5 @@
-import logging
 import contextlib
-
+import logging
 from logging.handlers import RotatingFileHandler
 
 __all__ = ('setup_logging',)
@@ -22,7 +21,7 @@ class ColorFormatter(logging.Formatter):
 
     FORMATS = {
         level: logging.Formatter(
-            f'\x1b[30;1m%(asctime)s\x1b[0m {colour}%(levelname)-8s\x1b[0m \x1b[35m%(name)s\x1b[0m %(message)s',  # noqa: E501
+            f'\x1b[30;1m%(asctime)s\x1b[0m {colour}%(levelname)-8s\x1b[0m \x1b[35m%(name)s\x1b[0m %(message)s',
             '%Y-%m-%d %H:%M:%S',
         )
         for level, colour in LEVEL_COLOURS
