@@ -1,14 +1,14 @@
 from tortoise import Model
 from tortoise.fields import (
-    IntField,
-    TextField,
     CharField,
+    DatetimeField,
     ForeignKeyField,
     ForeignKeyRelation,
-    DatetimeField
+    IntField,
+    TextField,
 )
 
-__all__ = ('User', 'Balance', 'Transactions')
+__all__ = ('Balance', 'Transactions', 'User')
 
 
 class User(Model):
