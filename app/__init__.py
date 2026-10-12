@@ -1,8 +1,9 @@
 import inspect
-import asyncpg
-import aiohttp
 
+import aiohttp
+import asyncpg
 from aiohttp import web
+
 from . import api, config
 
 __all__ = ('create_app',)
