@@ -1,12 +1,11 @@
+import importlib
+import inspect
+import logging
 import os
 import re
-import logging
-import asyncpg
-import inspect
-import importlib
 
-from aiohttp import web
-from aiohttp import ClientSession
+import asyncpg
+from aiohttp import ClientSession, web
 
 __all__ = ('create_app',)
 

@@ -1,8 +1,9 @@
 import os
+from pathlib import Path
+
+from dotenv import load_dotenv
 
 from .logging import *
-from pathlib import Path
-from dotenv import load_dotenv
 
 env_path = Path.cwd() / 'app' / '.env'
 
